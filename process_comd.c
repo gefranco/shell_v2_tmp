@@ -15,7 +15,7 @@ void process_cmd(int glr, char **command, char **args, char **env)
 	if (glr == EOF || exblt(*command))
         {
                 free(*command);
-                exit(0);
+                exit(EXIT_SUCCESS);
         }
         pid_c = fork();
         if (pid_c > 0) /*father*/
@@ -32,15 +32,16 @@ void process_cmd(int glr, char **command, char **args, char **env)
 		{
 			ptrenv(env);
 			free(*command);
-			exit(0);
+			exit(EXIT_SUCCESS);
 		}		
 		else if (fndpthcmd(tkcmds, env) == -1)
                	{
 			perror(args[0]);
 			/*return (EXIT_FAILURE);*/
 			free(*command);
-			exit(0);
+			exit(EXIT_FAILURE);
 		}
+		res = EXIT_SUCCESS;
 		res = execcmd(tkcmds,args[0]);
 		 /*exit(execmd(args????, av[0]));
                 */
