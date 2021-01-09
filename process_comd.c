@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include "shell_v2.h"
-int process_cmd(int glr, char **command, char **args, char **env)
+void process_cmd(int glr, char **command, char **args, char **env)
 {
 	int status, res;
 	pid_t pid_c;
@@ -21,7 +24,7 @@ int process_cmd(int glr, char **command, char **args, char **env)
         }
         else if (pid_c == 0)
         {
-		int i = 0;
+		/*int i = 0;*/
                 cmdbld(*command, tkcmds);
 		_strcpy(pthcmd, tkcmds[0]);
 		

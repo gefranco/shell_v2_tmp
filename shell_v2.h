@@ -3,7 +3,7 @@
 #define MAX_ARGS 100
 #define MAX_LENGTH_CMD 1024
 int readcommand(char **);
-int process_cmd(int, char **, char **, char**);
+void process_cmd(int, char **, char **, char**);
 int cmdbld(char *buffer, char *args[]);
 char *_getenv(const char *name, char **environ);
 int _strlen(char *s);
@@ -16,4 +16,5 @@ char *concat(char *s, char *cmd);
 int execcmd(char *args[], char *av);
 void free_arr(char *arr[]);
 int ptrenv(char **environ);
+int exblt(char *b);
 #endif

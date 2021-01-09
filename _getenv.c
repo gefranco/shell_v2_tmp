@@ -9,7 +9,6 @@ char *_getenv(const char *name, char **environ)
 
 	char *env;
 	char *av;
-	char *tmp;
 
 	env = NULL;
 	i = 0;

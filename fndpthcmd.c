@@ -12,9 +12,8 @@ int fndpthcmd(char *cmds[], char **env)
 	char *cmd = cmds[0];
 	struct stat st;
 	char pthcmd[MAX_LENGTH_CMD];
-	char *dir;
-	int i, j, i2, k;
-	i = j = i2 = k = 0;
+	int  i2, k;
+	i2 = k = 0;
 	
 	path = _getenv("PATH", env);
 	

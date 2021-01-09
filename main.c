@@ -5,6 +5,7 @@ int main(int ac, char **argsv, char **env)
 {
 	int res = 0;
         char *buf = NULL;
+	(void)ac;
 	while((res=readcommand(&buf))!= -1)
 	{
 		process_cmd(res, &buf, argsv, env);
