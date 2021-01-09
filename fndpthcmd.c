@@ -15,6 +15,10 @@ int fndpthcmd(char *cmds[], char **env)
 	int  i2, k;
 	i2 = k = 0;
 	
+	if(stat(cmds[0], &st) == 0)
+	{
+		return 1;
+	}	
 	path = _getenv("PATH", env);
 	
 	pathdirs(path, dirs);
